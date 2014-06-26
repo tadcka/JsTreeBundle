@@ -43,17 +43,26 @@ class Node
     private $children;
 
     /**
+     * @var string
+     *
+     * @Type("string")
+     */
+    private $icon;
+
+    /**
      * Constructor.
      *
      * @param int $id
      * @param string $text
      * @param bool $children
+     * @param null|string $icon
      */
-    public function __construct($id, $text, $children)
+    public function __construct($id, $text, $children, $icon = null)
     {
         $this->id = $id;
         $this->text = $text;
         $this->children = $children;
+        $this->icon = $icon;
     }
 
     /**
@@ -84,5 +93,13 @@ class Node
     public function getChildren()
     {
         return $this->children;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIcon()
+    {
+        return $this->icon;
     }
 }
