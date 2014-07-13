@@ -11,8 +11,6 @@
 
 namespace Tadcka\JsTreeBundle\Model;
 
-use JMS\Serializer\Annotation\Type;
-
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>
  *
@@ -22,30 +20,22 @@ class Node
 {
     /**
      * @var int
-     *
-     * @Type("integer")
      */
     private $id;
 
 
     /**
      * @var string
-     *
-     * @Type("string")
      */
     private $text;
 
     /**
      * @var bool
-     *
-     * @Type("boolean")
      */
     private $children;
 
     /**
      * @var string
-     *
-     * @Type("string")
      */
     private $icon;
 
