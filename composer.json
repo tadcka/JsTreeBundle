@@ -15,8 +15,8 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/framework-bundle" : ">=2.3",
-
-        "jms/serializer-bundle": "~0.13"
+        "jms/serializer-bundle": "~0.13",
+        "vakata/jstree": "dev-master"
     },
     "autoload": {
         "psr-4": {
