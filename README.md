@@ -16,6 +16,15 @@ Add TadckaJsTreeBundle in your composer.json:
     }
 }
 ```
+And set component dir, example:
+
+```js
+{
+    "config": {
+        "component-dir": "web/components"
+    }
+}
+```
 
 Now tell composer to download the bundle by running the command:
 
@@ -41,18 +50,6 @@ public function registerBundles()
 ```
 
 ### Step 3: Include javascript and css
-
-Add to master composer.json:
-
-```js
-{
-    "config": {
-        "component-dir": "web/components"
-    }
-}
-```
-
-Include:
 
 ```twig
 components/jstree/dist/themes/default/style.min.css
