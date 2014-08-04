@@ -40,6 +40,27 @@ public function registerBundles()
 }
 ```
 
+### Step 3: Include javascript and css
+
+Add to master composer.json:
+
+```js
+{
+    "config": {
+        "component-dir": "web/components"
+    }
+}
+```
+
+Twig:
+
+```twig
+components/jstree/dist/themes/default/style.min.css
+
+components/jquery/jquery.min.js
+components/jstree/dist/jstree.min.js
+```
+
 License
 -------
 
