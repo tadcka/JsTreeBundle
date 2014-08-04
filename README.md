@@ -52,7 +52,7 @@ Add to master composer.json:
 }
 ```
 
-Twig:
+Include:
 
 ```twig
 components/jstree/dist/themes/default/style.min.css
