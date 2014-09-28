@@ -17,7 +17,9 @@
 
         <property name="text" type="string" serialized-name="text" expose="true" />
 
-        <property name="children" type="boolean" serialized-name="children" expose="true" />
+        <!--<property name="children" serialized-name="children" expose="true">-->
+            <!--<type><![CDATA[array<Tadcka\JsTreeBundle\Model\Node>]]></type>-->
+        <!--</property>-->
 
         <property name="icon" type="string" serialized-name="icon" expose="true" />
 

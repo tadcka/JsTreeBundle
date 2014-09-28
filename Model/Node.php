@@ -23,14 +23,13 @@ class Node
      */
     private $id;
 
-
     /**
      * @var string
      */
     private $text;
 
     /**
-     * @var bool
+     * @var bool|array|Node[]
      */
     private $children;
 
@@ -44,7 +43,7 @@ class Node
      *
      * @param int $id
      * @param string $text
-     * @param bool $children
+     * @param bool|array|Node[] $children
      * @param null|string $icon
      */
     public function __construct($id, $text, $children, $icon = null)
@@ -78,7 +77,7 @@ class Node
     /**
      * Get children.
      *
-     * @return bool
+     * @return bool|array|Node[]
      */
     public function getChildren()
     {
@@ -86,6 +85,8 @@ class Node
     }
 
     /**
+     * Get icon.
+     *
      * @return string
      */
     public function getIcon()
