@@ -11,19 +11,20 @@
 
 namespace Tadcka\Bundle\JsTreeBundle\ContextMenu;
 
+use Tadcka\JsTreeBundle\Model\ContextMenuItem;
+
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>
  *
  * @since 5/29/14 10:49 PM
  */
-class ContextMenuBuilder implements ContextMenuFactoryInterface
+class ContextMenuFactory implements ContextMenuFactoryInterface
 {
-
     /**
      * {@inheritdoc}
      */
-    public function create()
+    public function create($slug)
     {
-        // TODO: Implement create() method.
+        return new ContextMenuItem($slug, null, null);
     }
 }

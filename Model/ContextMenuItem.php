@@ -11,9 +11,6 @@
 
 namespace Tadcka\JsTreeBundle\Model;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\SerializedName;
-
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>
  *
@@ -22,56 +19,57 @@ use JMS\Serializer\Annotation\SerializedName;
 class ContextMenuItem
 {
     /**
-     * Unique string.
-     *
      * @var string
+     *
+     * Unique string.
      */
-    private $name;
+    private $slug;
 
     /**
      * @var string
      *
-     * @Type("string")
-     * @SerializedName("label")
      */
     private $label;
 
     /**
      * @var string
-     *
-     * @Type("string")
-     * @SerializedName("icon")
      */
     private $iconPath;
 
     /**
      * @var string
-     *
-     * @Type("string")
-     * @SerializedName("action")
      */
     private $action;
 
     /**
-     * @var ContextMenu
-     *
-     * @Type("Tadcka\JsTreeBundle\Model\ContextMenuItem")
-     * @SerializedName("submenu")
+     * @var array|ContextMenuItem[]
      */
-    private $submenu;
+    private $submenu = array();
 
     /**
      * Constructor.
      *
-     * @param string $name
+     * @param string $slug
      * @param string $label
      * @param string $action
+     * @param array|ContextMenuItem[] $submenu
      */
-    public function __construct($name, $label, $action)
+    public function __construct($slug, $label, $action, $submenu = array())
     {
-        $this->name = $name;
+        $this->slug = $slug;
         $this->label = $label;
         $this->action = $action;
+        $this->submenu = $submenu;
+    }
+
+    /**
+     * Get slug.
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**
@@ -82,6 +80,16 @@ class ContextMenuItem
     public function getLabel()
     {
         return $this->label;
+    }
+
+    /**
+     * Get action.
+     *
+     * @return string
+     */
+    public function getAction()
+    {
+        return $this->action;
     }
 
     /**
@@ -109,33 +117,9 @@ class ContextMenuItem
     }
 
     /**
-     * Get action.
-     *
-     * @return string
-     */
-    public function getAction()
-    {
-        return $this->action;
-    }
-
-    /**
-     * Set submenu.
-     *
-     * @param ContextMenu $submenu
-     *
-     * @return ContextMenuItem
-     */
-    public function setSubmenu(ContextMenu $submenu)
-    {
-        $this->submenu = $submenu;
-
-        return $this;
-    }
-
-    /**
      * Get submenu.
      *
-     * @return ContextMenu
+     * @return array|ContextMenuItem[]
      */
     public function getSubmenu()
     {
@@ -143,12 +127,50 @@ class ContextMenuItem
     }
 
     /**
-     * Get unique name.
+     * Set submenu.
      *
-     * @return string
+     * @param array|ContextMenuItem[] $submenu
+     *
+     * @return ContextMenuItem
      */
-    public function getName()
+    public function setSubmenu(array $submenu)
     {
-        return $this->name;
+        $this->submenu = $submenu;
+
+        return $this;
+    }
+
+    /**
+     * Add submenu item.
+     *
+     * @param ContextMenuItem $submenuItem
+     */
+    public function addSubmenuItem(ContextMenuItem $submenuItem)
+    {
+        $this->submenu[$submenuItem->getSlug()] = $submenuItem;
+    }
+
+    /**
+     * Remove submenu item.
+     *
+     * @param ContextMenuItem $submenuItem
+     */
+    public function removeSubmenuItem(ContextMenuItem $submenuItem)
+    {
+        if ($this->hasSubmenuItem($submenuItem->getSlug())) {
+            unset($this->submenu[$submenuItem->getSlug()]);
+        }
+    }
+
+    /**
+     * Check if has submenu item.
+     *
+     * @param string $slug
+     *
+     * @return bool
+     */
+    public function hasSubmenuItem($slug)
+    {
+        return isset($this->submenu[$slug]);
     }
 }

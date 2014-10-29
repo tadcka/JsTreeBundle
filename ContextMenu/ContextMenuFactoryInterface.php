@@ -11,7 +11,7 @@
 
 namespace Tadcka\Bundle\JsTreeBundle\ContextMenu;
 
-use Tadcka\JsTreeBundle\Model\ContextMenu;
+use Tadcka\JsTreeBundle\Model\ContextMenuItem;
 
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>
@@ -23,7 +23,9 @@ interface ContextMenuFactoryInterface
     /**
      * Create context menu.
      *
-     * @return ContextMenu
+     * @param string $slug
+     *
+     * @return ContextMenuItem
      */
-    public function create();
+    public function create($slug);
 }
