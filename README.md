@@ -1,6 +1,8 @@
 JsTreeBundle
 ============
 
+[![Latest Stable Version](https://poser.pugx.org/tadcka/jstree-bundle/v/stable.svg)](https://packagist.org/packages/tadcka/jstree-bundle) [![Total Downloads](https://poser.pugx.org/tadcka/jstree-bundle/downloads.svg)](https://packagist.org/packages/tadcka/jstree-bundle) [![Latest Unstable Version](https://poser.pugx.org/tadcka/jstree-bundle/v/unstable.svg)](https://packagist.org/packages/tadcka/jstree-bundle) [![License](https://poser.pugx.org/tadcka/jstree-bundle/license.svg)](https://packagist.org/packages/tadcka/jstree-bundle)
+
 TadckaJsTreeBundle integrates library JsTree.
 
 ## Installation
