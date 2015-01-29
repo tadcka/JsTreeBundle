@@ -19,7 +19,7 @@ namespace Tadcka\JsTreeBundle\Model;
 class Node
 {
     /**
-     * @var int
+     * @var string
      */
     private $id;
 
@@ -41,7 +41,7 @@ class Node
     /**
      * Constructor.
      *
-     * @param int $id
+     * @param string $id
      * @param string $text
      * @param bool|array|Node[] $children
      * @param null|string $icon
@@ -55,7 +55,7 @@ class Node
     }
 
     /**
-     * Get id.
+     * Get string.
      *
      * @return int
      */

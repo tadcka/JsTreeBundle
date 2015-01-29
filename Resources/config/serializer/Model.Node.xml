@@ -13,7 +13,7 @@
 
     <class name="Tadcka\JsTreeBundle\Model\Node">
 
-        <property name="id" type="integer" serialized-name="id" expose="true" />
+        <property name="id" type="string" serialized-name="id" expose="true" />
 
         <property name="text" type="string" serialized-name="text" expose="true" />
 
