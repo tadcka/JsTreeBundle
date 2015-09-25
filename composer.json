@@ -15,7 +15,7 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/framework-bundle" : ">=2.3",
-        "jms/serializer-bundle": "~0.13",
+        "jms/serializer-bundle": "~1.0",
         "vakata/jstree": "3.0.*"
     },
     "autoload": {
